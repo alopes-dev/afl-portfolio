@@ -25,6 +25,21 @@ export const metadata: Metadata = {
     siteName: "Antonio Ferraz Lopes",
     title: "Antonio Ferraz Lopes",
     description: DESCRIPTION,
+    images: [
+      {
+        url: "https://avatars.githubusercontent.com/u/49714406?v=4",
+        width: 1200,
+        height: 630,
+        alt: "Antonio Ferraz Lopes - Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antonio Ferraz Lopes",
+    description: DESCRIPTION,
+    images: ["https://avatars.githubusercontent.com/u/49714406?v=4"],
+    creator: "@antonioferrazlopes", // Add your Twitter handle here if you have one
   },
 };
 
