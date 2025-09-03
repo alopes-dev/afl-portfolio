@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home | Your Portfolio",
+  title: "Home | Antonio Ferraz Lopes",
   description: "Welcome to my portfolio website",
   openGraph: {
-    title: "Home | Your Portfolio",
+    title: "Home | Antonio Ferraz Lopes",
     description: "Welcome to my portfolio website",
     type: "website",
+    url: "https://www.antonioferrazlopes.com",
   },
 };
 

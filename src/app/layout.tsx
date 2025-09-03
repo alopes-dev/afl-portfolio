@@ -6,19 +6,25 @@ import { NavMenu } from "@/components/nav-menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const DESCRIPTION =
+  "Full Stack Software Engineer with 6+ years of experience building scalable and high-performance web and mobile applications. Proven track record working on international projects such as OMS, iFood, sheerMe Apps, Abastece-Aí (Ipiranga) and KMV, leveraging technologies like React.js, NextJS, Node.js, React Native, iOS SwiftUI, Flutter and container-based DevOps. Passionate about solving real-world problems through clean, maintainable code and cross-functional collaboration.";
 export const metadata: Metadata = {
   title: {
-    template: "%s | Your Portfolio",
-    default: "Your Portfolio",
+    template: "%s | Antonio Ferraz Lopes",
+    default: "Antonio Ferraz Lopes",
   },
-  description: "A portfolio website built with Next.js",
+  description: DESCRIPTION,
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
-    siteName: "Your Portfolio",
-    title: "Your Portfolio",
-    description: "A portfolio website built with Next.js",
+    url: "https://www.antonioferrazlopes.com",
+    siteName: "Antonio Ferraz Lopes",
+    title: "Antonio Ferraz Lopes",
+    description: DESCRIPTION,
   },
 };
 
