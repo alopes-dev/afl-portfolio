@@ -1,4 +1,6 @@
+import { ThemeToggle } from "@/components/_shared/ThemeToggle";
 import type { Metadata } from "next";
+import RootLayout from "./layout";
 
 export const metadata: Metadata = {
   title: "Home | Antonio Ferraz Lopes",
@@ -34,8 +36,10 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">Antonio Ferraz Lopes</h1>
+    <main className="flex h-full flex-col items-center justify-between p-24">
+      <h1 className="text-4xl font-bold text-dark-900 dark:text-light-100">
+        Antonio Ferraz Lopes
+      </h1>
     </main>
   );
 }

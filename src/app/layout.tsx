@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "@/components/providers";
 import { NavMenu } from "@/components/nav-menu";
+import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,15 +50,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.classList.add(theme);
+          })();
+        `,
+          }}
+        />
+      </head>
+      <body
+        className={`h-full antialiased bg-white dark:bg-gray-800 text-black dark:text-white text-foreground ${inter.className}`}
+      >
+        <ThemeProvider>
           <NavMenu />
-          <div className="pt-14">{children}</div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
