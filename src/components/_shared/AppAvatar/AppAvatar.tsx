@@ -23,7 +23,12 @@ const AVATAR_IMAGES: AvatarImage[] = [
   },
 ];
 
-export const AppAvatar = () => {
+type AppAvatarProps = {
+  size?: number;
+  className?: string;
+};
+
+export const AppAvatar = ({ className, size = 64 }: AppAvatarProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
@@ -36,7 +41,9 @@ export const AppAvatar = () => {
   }, []);
 
   return (
-    <div className="w-16 h-16 rounded-full flex items-center justify-center border border-purple-dark border-solid dark:border-dark-400">
+    <div
+      className={`w-16 h-16 rounded-full flex items-center justify-center border border-purple-dark border-solid dark:border-dark-400 ${className}`}
+    >
       <div
         className={`relative w-full h-full transition-transform duration-${TRANSITION_DURATION_MS} ease-in-out ${
           isFlipped ? "rotate-y-180" : ""
@@ -48,8 +55,8 @@ export const AppAvatar = () => {
             key={image.src}
             src={image.src}
             alt={image.alt}
-            width={64}
-            height={64}
+            width={size}
+            height={size}
             loading="eager"
             priority={false}
             className={`absolute w-full h-full rounded-full object-cover backface-hidden transition-opacity duration-${OPACITY_TRANSITION_MS} ${
