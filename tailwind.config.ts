@@ -3,42 +3,73 @@ const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,css}"],
   theme: {
     extend: {
+      boxShadow: {
+        mediumDropShadow: `
+          0px 1px 3px rgba(0,0,0,0.3),
+          0px 4px 8px 3px rgba(0,0,0,0.15)
+        `,
+      },
+      rotate: {
+        "y-180": "rotateY(180deg)",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         border: "hsl(var(--border))",
         dark: {
-          100: "#FFFFFF", // Lightest
-          200: "#E5E5E5",
-          300: "#CCCCCC",
-          400: "#B3B3B3",
-          500: "#999999",
-          600: "#808080",
-          700: "#666666",
-          800: "#4D4D4D",
-          900: "#333333",
+          background: "#121212",
+          sidebar: "#211D3F",
+          100: "#F4F4F4", // Lightest
+          200: "#DCDCDC",
+          300: "#BFBFBF",
+          400: "#9B9B9B",
+          500: "#7A7A7A",
+          600: "#525252",
+          700: "#373737",
+          800: "#262626",
+          900: "#121212",
           950: "#000000", // Darkest
         },
         light: {
+          background: "#F9F9F9",
+          sidebar: "#E5E5E5",
           100: "#FFFFFF", // Lightest
-          200: "#F2F2F2",
-          300: "#E6E6E6",
-          400: "#D9D9D9",
+          200: "#F4F4F4",
+          300: "#E5E5E5",
+          400: "#DCDCDC",
           500: "#BFBFBF",
-          600: "#A6A6A6",
-          700: "#808080",
-          800: "#666666",
-          900: "#404040",
-          950: "#000000", // Darkest
+          600: "#9B9B9B",
+          700: "#7A7A7A",
+          800: "#5A5A5A",
+          900: "#3C3C3C",
+          950: "#121212", // Darkest
         },
         purple: {
-          DEFAULT: "#5D40C2", // Primary color
-          light: "#7B61D8", // Lighter variation
-          dark: "#4730A8", // Darker variation
+          DEFAULT: "#6E5DE7", // Primary color
+          light: "#8E88F1", // Lighter variation
+          dark: "#5D40C2", // Darker variation
         },
       },
     },
   },
+  plugins: [
+    // ... other plugins ...
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (utilities: Record<string, Record<string, string>>) => void;
+    }) {
+      addUtilities({
+        ".backface-hidden": {
+          "backface-visibility": "hidden",
+          "-webkit-backface-visibility": "hidden",
+        },
+        ".rotate-y-180": {
+          transform: "rotateY(180deg)",
+        },
+      });
+    },
+  ],
 };
 
 export default config;
