@@ -4,6 +4,7 @@ import { useTheme } from "@/components/providers";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AppAvatar } from "../../AppAvatar/AppAvatar";
+import { useDrawerStore } from "@/store/drawer";
 
 const navItems = [
   { href: "/", label: "Entry Point()" },
@@ -15,6 +16,7 @@ const navItems = [
 export const DrawerContent = () => {
   const { theme } = useTheme();
   const pathname = usePathname();
+  const { toggle } = useDrawerStore();
 
   return (
     <nav className="p-4 h-full" role="navigation" aria-label="Main navigation">
@@ -22,7 +24,7 @@ export const DrawerContent = () => {
         <div className="flex items-start flex-col gap-2 p-4">
           <AppAvatar />
           <div className="gap-3">
-            <h1 className="text-2xl left-[30px] font-light text-light-950 dark:text-dark-100">
+            <h1 className="text-2xl leading-[30px] font-light text-light-950 dark:text-dark-100">
               Antonio Lopes
             </h1>
             <p className="text-xs font-bold text-light-950 dark:text-dark-100">
@@ -38,6 +40,7 @@ export const DrawerContent = () => {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={toggle}
                 className={`text-sm h-9 font-medium transition-colors hover:text-foreground/80 ${
                   pathname === item.href
                     ? " text-purple-dark dark:text-purple-light"
