@@ -24,7 +24,6 @@ export const AppDrawer = () => {
         `}
         role="dialog"
         aria-modal="true"
-        aria-expanded={isOpen}
         aria-hidden={!isOpen}
       >
         <div className="absolute top-[-10px] left-[62%]  overflow-hidden w-[150px] rounded-full h-[150px]  blur-3xl dark:bg-purple bg-purple-light opacity-100"></div>

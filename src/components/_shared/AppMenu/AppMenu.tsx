@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { AppSelectLanguage } from "../AppSelectLanguage/AppSelectLanguage";
-import { useTheme } from "@/components/providers";
 
 const navItems = [
   { href: "/", label: "Entry Point()" },
@@ -14,7 +13,6 @@ const navItems = [
 export const AppMenu = () => {
   const pathname = usePathname();
   const { toggle } = useDrawerStore();
-  const { theme } = useTheme();
 
   return (
     <nav className="fixed top-8 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">

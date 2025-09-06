@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "@/components/providers";
-import { useState } from "react";
 export const AppSwitcher = () => {
   const { theme, toggleTheme } = useTheme();
   const isDarkMode = theme === "dark";

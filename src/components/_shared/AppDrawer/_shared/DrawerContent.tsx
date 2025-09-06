@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { AppSwitcher } from "../../AppSwitcher/AppSwitcher";
 import { useTheme } from "@/components/providers";
 import Link from "next/link";

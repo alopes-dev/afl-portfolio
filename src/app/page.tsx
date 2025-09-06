@@ -1,6 +1,4 @@
-import { ThemeToggle } from "@/components/_shared/ThemeToggle";
 import type { Metadata } from "next";
-import RootLayout from "./layout";
 
 export const metadata: Metadata = {
   title: "Home | Antonio Ferraz Lopes",
