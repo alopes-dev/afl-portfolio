@@ -60,16 +60,5 @@
   html,
   body {
     @apply text-foreground transition-colors duration-300;
-
-    .blur-3xl {
-      -webkit-filter: blur(64px);
-      filter: blur(64px);
-    }
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      .backdrop-blur-3xl {
-        -webkit-backdrop-filter: blur(64px);
-        backdrop-filter: blur(64px);
-      }
-    }
   }
 }
