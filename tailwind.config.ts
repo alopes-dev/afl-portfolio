@@ -9,6 +9,12 @@ const config = {
   ],
   theme: {
     extend: {
+      blur: {
+        "3xl": "64px",
+      },
+      corePlugins: {
+        filter: true,
+      },
       boxShadow: {
         mediumDropShadow: `
           0px 1px 3px rgba(0,0,0,0.3),
