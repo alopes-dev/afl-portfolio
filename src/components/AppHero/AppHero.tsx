@@ -6,7 +6,7 @@ import { Button } from "../ui";
 export const AppHero = () => {
   return (
     <AppAnimation id="#home">
-      <div className="flex flex-col items-center gap-5 pt-1">
+      <div className="flex flex-col w-full items-center gap-5 pt-1">
         <AppAvatar className="w-[120px] h-[120px]" size={120} />
         <h1 className="text-2xl leading-[30px] font-light text-light-950 dark:text-dark-100">
           Antonio Lopes

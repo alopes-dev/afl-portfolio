@@ -2,13 +2,14 @@
 import { AppSwitcher } from "../../AppSwitcher/AppSwitcher";
 import { useTheme } from "@/components/providers";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 import { AppAvatar } from "../../AppAvatar/AppAvatar";
 import { useDrawerStore } from "@/store/drawer";
 
 const navItems = [
   { href: "#home", label: "Entry Point()" },
   { href: "#about", label: "About me" },
+  { href: "#skill", label: "My Skills" },
   { href: "/projects", label: "Projects" },
   { href: "/open-source", label: "Open Source Contributions" },
 ];
@@ -16,7 +17,10 @@ const navItems = [
 export const DrawerContent = () => {
   const { theme } = useTheme();
   const pathname = usePathname();
+  location.hash;
   const { toggle } = useDrawerStore();
+
+  const path = !!location.hash ? location.hash : pathname;
 
   return (
     <nav className="p-4 h-full" role="navigation" aria-label="Main navigation">
@@ -42,7 +46,7 @@ export const DrawerContent = () => {
                 href={item.href}
                 onClick={toggle}
                 className={`text-sm h-9 font-medium transition-colors hover:text-foreground/80 ${
-                  pathname === item.href
+                  path === item.href
                     ? " text-purple-dark dark:text-purple-light"
                     : "dark:text-dark-100 text-light-950"
                 }`}

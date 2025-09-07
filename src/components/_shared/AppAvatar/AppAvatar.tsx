@@ -58,7 +58,7 @@ export const AppAvatar = ({ className, size = 64 }: AppAvatarProps) => {
             width={size}
             height={size}
             loading="eager"
-            priority={false}
+            priority={true}
             className={`absolute w-full h-full rounded-full object-cover backface-hidden transition-opacity duration-${OPACITY_TRANSITION_MS} ${
               index === 0
                 ? isFlipped
