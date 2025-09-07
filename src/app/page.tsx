@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="flex h-full w-full flex-col items-center p-6 pt-36">
-      <div className="absolute dark:top-[-166px] top-[-15px] w-[354px] rounded-full h-[354px] md:hidden dark:blur-[600px] blur-[250px] dark:bg-purple bg-purple-light opacity-100"></div>
+      <div className="absolute dark:top-[-166px] top-[-166px] w-[354px] rounded-full h-[354px] md:hidden dark:blur-[400px] blur-[170px] dark:bg-purple-dark bg-purple-dark opacity-100"></div>
       <AppHero />
       <AppAbout />
     </main>
