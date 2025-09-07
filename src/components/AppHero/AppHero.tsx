@@ -26,7 +26,7 @@ export const AppHero = () => {
             Building scalable, high-performance applications for web & mobile
           </p>
           <Button variant="default" className="mt-4">
-            Let's Connect
+            {"Let's Connect"}
           </Button>
         </div>
       </div>

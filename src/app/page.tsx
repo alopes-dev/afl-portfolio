@@ -1,4 +1,3 @@
-import { AppAvatar } from "@/components/_shared/AppAvatar/AppAvatar";
 import { AppAbout } from "@/components/AppAbout/AppAbout";
 import { AppHero } from "@/components/AppHero/AppHero";
 import type { Metadata } from "next";
