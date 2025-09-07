@@ -56,10 +56,18 @@ const config = {
           dark: "#5D40C2", // Darker variation
         },
       },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(1rem)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "fade-in": "fade-in 0.7s ease-out forwards",
+      },
     },
   },
   plugins: [
-    // ... other plugins ...
     function ({
       addUtilities,
     }: {

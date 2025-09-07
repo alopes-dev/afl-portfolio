@@ -44,11 +44,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "dark:bg-purple bg-purple text-primary-foreground shadow-xs dark:hover:bg-purple-dark hover:bg-purple-light",
+          "dark:bg-purple bg-purple text-light-100 dark:text-light-100 shadow-xs dark:hover:bg-purple-dark hover:bg-purple-light w-fit",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border border-solid dark:border-purple border-purple outline-0 shadow-xs dark:border-purple-dark border-purple-light",
+          "border border-solid dark:border-purple border-purple outline-0 shadow-xs dark:border-purple-dark border-purple-light w-fit",
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost:

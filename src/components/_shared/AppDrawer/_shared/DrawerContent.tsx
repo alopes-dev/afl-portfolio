@@ -7,8 +7,8 @@ import { AppAvatar } from "../../AppAvatar/AppAvatar";
 import { useDrawerStore } from "@/store/drawer";
 
 const navItems = [
-  { href: "/", label: "Entry Point()" },
-  { href: "/about", label: "About me" },
+  { href: "#home", label: "Entry Point()" },
+  { href: "#about", label: "About me" },
   { href: "/projects", label: "Projects" },
   { href: "/open-source", label: "Open Source Contributions" },
 ];

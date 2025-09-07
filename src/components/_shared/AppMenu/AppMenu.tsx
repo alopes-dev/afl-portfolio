@@ -7,7 +7,7 @@ import { AppSelectLanguage } from "../AppSelectLanguage/AppSelectLanguage";
 
 const navItems = [
   { href: "/", label: "Entry Point()" },
-  { href: "/about", label: "About me" },
+  { href: "#about", label: "About me" },
   { href: "/open-source", label: "Open Source Contributions" },
 ];
 export const AppMenu = () => {
