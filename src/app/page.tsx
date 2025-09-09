@@ -1,5 +1,6 @@
 import { AppWarpper } from "@/components/_shared/AppWrapper/AppWrapper";
 import { AppAbout } from "@/components/AppAbout/AppAbout";
+import { AppBrandsWorkedWithMe } from "@/components/AppBrandsWorkedWithMe/AppBrandsWorkedWithMe";
 import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";
 import { AppHero } from "@/components/AppHero/AppHero";
 import type { Metadata } from "next";
@@ -44,6 +45,7 @@ export default function HomePage() {
         <AppHero />
         <AppAbout />
         <AppCoreSkill />
+        <AppBrandsWorkedWithMe />
       </AppWarpper>
     </main>
   );
