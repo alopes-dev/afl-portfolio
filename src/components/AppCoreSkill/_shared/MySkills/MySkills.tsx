@@ -1,6 +1,4 @@
-import { cn } from "@/lib/utils";
-import { Code2, Code } from "lucide-react";
-import { Fragment } from "react";
+import { Code2 } from "lucide-react";
 
 const mySkills = [
   {

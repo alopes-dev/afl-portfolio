@@ -2,7 +2,7 @@
 import { AppSwitcher } from "../../AppSwitcher/AppSwitcher";
 import { useTheme } from "@/components/providers";
 import Link from "next/link";
-import { useParams, usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { AppAvatar } from "../../AppAvatar/AppAvatar";
 import { useDrawerStore } from "@/store/drawer";
 

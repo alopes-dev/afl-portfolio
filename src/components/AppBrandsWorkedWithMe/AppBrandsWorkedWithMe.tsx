@@ -5,6 +5,7 @@ import { SoftoIcon } from "../_shared/AppIcons/softo";
 import { ObjectiveIcon } from "../_shared/AppIcons/objective";
 import { MochiIcon } from "../_shared/AppIcons/mochi";
 import { IpirangaIcon } from "../_shared/AppIcons/ipiranga";
+import Image from "next/image";
 
 export const AppBrandsWorkedWithMe = () => {
   const brands = [
@@ -89,7 +90,7 @@ export const AppBrandsWorkedWithMe = () => {
     <div className="w-full py-12 bg-background flex items-center justify-center">
       <div className="container px-4 md:px-6">
         <h2 className="text-3xl font-bold text-center mb-8">
-          Brands I've Worked With
+          {"Brands I've Worked With"}
         </h2>
 
         <div
@@ -109,9 +110,11 @@ export const AppBrandsWorkedWithMe = () => {
                     </>
                   )}
                   {!brand?.component && (
-                    <img
+                    <Image
                       src={brand.logo}
                       alt={brand.name}
+                      loading="eager"
+                      priority={true}
                       className="w-full h-full object-contain"
                       draggable="false"
                     />

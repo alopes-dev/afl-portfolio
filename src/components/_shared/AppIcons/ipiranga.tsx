@@ -1,4 +1,5 @@
 import { Nunito } from "next/font/google";
+import Image from "next/image";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -13,11 +14,11 @@ export const IpirangaIcon = () => (
     className={`md:text-4xl text-2xl flex items-center gap-2 font-semibold ${nunito.className}`}
   >
     <div className="md:w-10 md:h-10 w-7 h-7 rounded-full">
-      <img
+      <Image
         src="/images/brands/ipiranga.jpeg"
         alt="Ipiranga"
-        width="100%"
-        height="100%"
+        loading="eager"
+        priority={true}
         className="w-full h-full object-contain rounded-full"
         draggable="false"
       />
