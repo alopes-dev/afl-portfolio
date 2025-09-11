@@ -19,6 +19,8 @@ export const IpirangaIcon = () => (
         alt="Ipiranga"
         loading="eager"
         priority={true}
+        width={100}
+        height={100}
         className="w-full h-full object-contain rounded-full"
         draggable="false"
       />

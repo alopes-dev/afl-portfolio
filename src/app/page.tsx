@@ -40,13 +40,13 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="flex h-full w-full flex-col items-center p-6 pt-36">
-      <AppWarpper>
-        <div className="absolute top-[-166px] w-[354px] rounded-full h-[354px] md:hidden blur-3xl bg-purple-dark dark:opacity-40 opacity-30"></div>
-        <AppHero />
-        <AppAbout />
-        <AppCoreSkill />
-        <AppBrandsWorkedWithMe />
-      </AppWarpper>
+      {/* <AppWarpper> */}
+      <div className="absolute top-[-166px] w-[354px] rounded-full h-[354px] md:hidden blur-3xl bg-purple-dark dark:opacity-40 opacity-30"></div>
+      <AppHero />
+      <AppAbout />
+      <AppCoreSkill />
+      <AppBrandsWorkedWithMe />
+      {/* </AppWarpper> */}
     </main>
   );
 }

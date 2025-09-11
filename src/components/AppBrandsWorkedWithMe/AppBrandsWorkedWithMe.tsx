@@ -6,18 +6,29 @@ import { ObjectiveIcon } from "../_shared/AppIcons/objective";
 import { MochiIcon } from "../_shared/AppIcons/mochi";
 import { IpirangaIcon } from "../_shared/AppIcons/ipiranga";
 import Image from "next/image";
+import { NebulanceIcon } from "../_shared/AppIcons/nebulance";
+import { MalgaIcon } from "../_shared/AppIcons/malga";
+import { FAIcon } from "../_shared/AppIcons/fa";
 
 export const AppBrandsWorkedWithMe = () => {
   const brands = [
+    { id: 1, name: "NebulanceIcon", component: () => <NebulanceIcon /> },
     {
-      id: 1,
+      id: 2,
       name: "SoftoIcon",
       component: () => <SoftoIcon />,
     },
-    { id: 2, name: "sheerme", logo: "/images/brands/sheerme-light.svg" },
-    { id: 3, name: "IpirangaIcon", component: () => <IpirangaIcon /> },
-    { id: 4, name: "ObjectiveIcon", component: () => <ObjectiveIcon /> },
-    { id: 5, name: "MochiIcon", component: () => <MochiIcon /> },
+    { id: 3, name: "sheerme", logo: "/images/brands/sheerme-light.svg" },
+    { id: 4, name: "IpirangaIcon", component: () => <IpirangaIcon /> },
+    { id: 5, name: "ObjectiveIcon", component: () => <ObjectiveIcon /> },
+    { id: 6, name: "MochiIcon", component: () => <MochiIcon /> },
+    { id: 7, name: "MalgaIcon", component: () => <MalgaIcon /> },
+    { id: 8, name: "ifood", logo: "/images/brands/ifood.svg" },
+    { id: 9, name: "nutrebem", logo: "/images/brands/nutrebem.png" },
+    { id: 10, name: "inspecte", logo: "/images/brands/inspecte.svg" },
+    { id: 11, name: "metcare", logo: "/images/brands/metcare.webp" },
+    { id: 12, name: "FA", component: () => <FAIcon /> },
+    { id: 13, name: "Avatar", logo: "/images/brands/goal.png" },
   ];
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -84,12 +95,12 @@ export const AppBrandsWorkedWithMe = () => {
     };
   }, []);
 
-  const repeatedBrands = [...brands, ...brands, ...brands];
+  const repeatedBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
     <div className="w-full py-12 bg-background flex items-center justify-center">
       <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-center mb-8">
+        <h2 className="text-3xl font-bold text-center mb-4">
           {"Brands I've Worked With"}
         </h2>
 
@@ -97,13 +108,13 @@ export const AppBrandsWorkedWithMe = () => {
           ref={scrollRef}
           className="relative w-full overflow-x-auto scrollbar-hide scroll-smooth"
         >
-          <div className="flex gap-6 min-w-max py-4">
+          <div className="flex gap-6 min-w-max">
             {repeatedBrands.map((brand, index) => (
               <div
                 key={`${brand.id}-${index}`}
                 className="flex-none w-[120px] md:w-[170px] h-[80px]"
               >
-                <div className="bg-card w-full h-full rounded-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg flex items-center justify-center p-2">
+                <div className="bg-card w-full h-full cursor-pointer rounded-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg flex items-center justify-center p-2">
                   {brand?.component && (
                     <>
                       <brand.component />
@@ -115,6 +126,8 @@ export const AppBrandsWorkedWithMe = () => {
                       alt={brand.name}
                       loading="eager"
                       priority={true}
+                      width={100}
+                      height={100}
                       className="w-full h-full object-contain"
                       draggable="false"
                     />
