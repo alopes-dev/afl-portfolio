@@ -114,7 +114,7 @@ export const AppBrandsWorkedWithMe = () => {
                 key={`${brand.id}-${index}`}
                 className="flex-none w-[120px] md:w-[170px] h-[80px]"
               >
-                <div className="bg-card w-full h-full cursor-pointer rounded-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg flex items-center justify-center p-2">
+                <div className="bg-card w-full h-full cursor-pointer rounded-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-sm flex items-center justify-center p-2">
                   {brand?.component && (
                     <>
                       <brand.component />
