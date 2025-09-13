@@ -3,6 +3,7 @@ import { AppAbout } from "@/components/AppAbout/AppAbout";
 import { AppBrandsWorkedWithMe } from "@/components/AppBrandsWorkedWithMe/AppBrandsWorkedWithMe";
 import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";
 import { AppHero } from "@/components/AppHero/AppHero";
+import { AppProjectCarousel } from "@/components/AppProjectCarousel/AppProjectCarousel";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ export default function HomePage() {
       <AppAbout />
       <AppCoreSkill />
       <AppBrandsWorkedWithMe />
+      <AppProjectCarousel />
       {/* </AppWarpper> */}
     </main>
   );

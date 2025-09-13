@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --radius: 0.625rem;
-    --background: oklch(1 0 0);
+    --background: #f9f9f9;
     --foreground: oklch(0.129 0.042 264.695);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.129 0.042 264.695);
@@ -26,7 +26,7 @@
   }
 
   .dark {
-    --background: oklch(0.129 0.042 264.695);
+    --background: #121212;
     --foreground: oklch(0.984 0.003 247.858);
     --card: oklch(0.208 0.042 265.755);
     --card-foreground: oklch(0.984 0.003 247.858);
@@ -131,5 +131,29 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  .CarouselContent::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: -10%;
+    width: 120%;
+    height: 160px;
+    background: var(--background);
+    border-radius: 100%;
+    z-index: 1000;
+  }
+
+  .CarouselContent::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: -10%;
+    width: 120%;
+    height: 160px;
+    background: var(--background);
+    border-radius: 100%;
+    z-index: 100;
   }
 }
