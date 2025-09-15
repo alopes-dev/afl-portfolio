@@ -1,4 +1,3 @@
-import { AppWarpper } from "@/components/_shared/AppWrapper/AppWrapper";
 import { AppAbout } from "@/components/AppAbout/AppAbout";
 import { AppBrandsWorkedWithMe } from "@/components/AppBrandsWorkedWithMe/AppBrandsWorkedWithMe";
 import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";

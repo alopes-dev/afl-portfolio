@@ -17,7 +17,7 @@ const navItems = [
 export const DrawerContent = () => {
   const { theme } = useTheme();
   const pathname = usePathname();
-  location.hash;
+
   const { toggle } = useDrawerStore();
 
   const path = !!location.hash ? location.hash : pathname;
