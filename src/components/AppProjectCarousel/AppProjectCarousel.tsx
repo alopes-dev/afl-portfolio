@@ -21,7 +21,6 @@ export const AppProjectCarousel = () => {
   const router = useRouter();
 
   const [isPaused, setIsPaused] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(6);
   const progressInterval = useRef<NodeJS.Timeout | null>(null);
   const autoScrollInterval = useRef<NodeJS.Timeout | null>(null);
@@ -48,7 +47,6 @@ export const AppProjectCarousel = () => {
     autoScrollInterval.current = setInterval(() => {
       if (!isPaused) {
         api.scrollNext();
-        setProgress(0);
         currentStep = 0;
       }
     }, INTERVAL_MS);
@@ -57,7 +55,6 @@ export const AppProjectCarousel = () => {
     progressInterval.current = setInterval(() => {
       if (!isPaused) {
         currentStep++;
-        setProgress(Math.min((currentStep / STEPS) * 100, 100));
       }
     }, PROGRESS_UPDATE_MS);
 
@@ -73,19 +70,17 @@ export const AppProjectCarousel = () => {
     };
   }, [api, isPaused]);
 
-  // console.log(currentIndex);
-
   return (
     <div
       className="container mx-auto  px-4 mt-6 flex flex-col items-center justify-center overflow-hidden"
       id="featured"
     >
-      <h4 className="text-[28px] font-bold text-light-950 dark:text-dark-100 z-[1000]">
+      <h4 className="text-[28px] font-bold text-light-950 dark:text-dark-100 z-[996]">
         Featured Projects
       </h4>
       <Button
         variant="default"
-        className="mt-4 z-[1000]"
+        className="mt-4 z-[996]"
         onClick={() => router.push("/projects")}
       >
         {"See all my projects"}
@@ -120,11 +115,7 @@ export const AppProjectCarousel = () => {
                 className="basis-1/3 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 sm:h-[150px] md:h-[350px] "
               >
                 <motion.div
-                  className={`p-1 ${
-                    currentIndex === index
-                      ? "ring-4 ring-purple ring-offset-2 rounded-lg"
-                      : ""
-                  }`}
+                  className={`relative`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -140,6 +131,14 @@ export const AppProjectCarousel = () => {
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.1}
                 >
+                  {currentIndex === index && (
+                    <motion.div
+                      className="absolute inset-0  bg-purple/30 z-10 rounded-lg"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
                   <motion.div
                     whileHover={{
                       boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.15)",
@@ -185,15 +184,34 @@ export const AppProjectCarousel = () => {
           </CarouselContent>
         </Carousel>
       </motion.div>
-      <div className="w-2/5 bg-gray-200 rounded-full h-1.5 mt-2 z-[1000]">
-        <motion.div
-          className="bg-purple h-1.5 rounded-full"
-          style={{ width: `${progress}%` }}
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.1 }}
-        />
-      </div>
+      <motion.div
+        key={currentIndex}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+          staggerChildren: 0.1,
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+        }}
+        className="w-full mt-2 z-[996] flex flex-col items-center justify-center"
+      >
+        <h3 className="text-center text-xl font-bold text-light-950 dark:text-dark-100">
+          {"How I solved it"}
+        </h3>
+        <p className="text-sm text-center mb-1 font-semibold text-light-950 dark:text-dark-100">
+          Problem <small className="text-sm text-purple">→</small> Approach
+          <small className="text-sm text-purple"> → </small>
+          Solution <small className="text-sm text-purple"> → </small> Impact
+        </p>
+        <p className="text-sm text-center font-normal text-light-950 dark:text-dark-200">
+          {
+            "I've been working on this project for a while now, and I've tried a lot of different approaches. But nothing has worked so far. I'm here to share my solution and how it impacted the project."
+          }
+        </p>
+      </motion.div>
     </div>
   );
 };

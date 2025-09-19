@@ -142,7 +142,7 @@
     height: 160px;
     background: var(--background);
     border-radius: 100%;
-    z-index: 1000;
+    z-index: 996;
     @media screen and (max-width: 768px) {
       height: 100px;
     }
