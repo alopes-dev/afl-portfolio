@@ -1,3 +1,8 @@
+import { AppAbout } from "@/components/AppAbout/AppAbout";
+import { AppBrandsWorkedWithMe } from "@/components/AppBrandsWorkedWithMe/AppBrandsWorkedWithMe";
+import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";
+import { AppHero } from "@/components/AppHero/AppHero";
+import { AppProjectCarousel } from "@/components/AppProjectCarousel/AppProjectCarousel";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,8 +39,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">Antonio Ferraz Lopes</h1>
+    <main className="flex h-full w-full flex-col items-center p-6 pt-36">
+      {/* <AppWarpper> */}
+      <div className="absolute top-[-166px] w-[354px] rounded-full h-[354px] md:hidden blur-3xl bg-purple-dark dark:opacity-40 opacity-30"></div>
+      <AppHero />
+      <AppAbout />
+      <AppCoreSkill />
+      <AppBrandsWorkedWithMe />
+      <AppProjectCarousel />
+      {/* </AppWarpper> */}
     </main>
   );
 }
