@@ -38,25 +38,13 @@ export const AppProjectCarousel = () => {
     if (progressInterval.current) clearInterval(progressInterval.current);
 
     const INTERVAL_MS = SCROLL_SPEED * 1000; // Convert seconds to ms
-    const PROGRESS_UPDATE_MS = 30; // Update progress every 30ms
-    const STEPS = INTERVAL_MS / PROGRESS_UPDATE_MS;
-
-    let currentStep = 0;
 
     // Auto-scroll interval
     autoScrollInterval.current = setInterval(() => {
       if (!isPaused) {
         api.scrollNext();
-        currentStep = 0;
       }
     }, INTERVAL_MS);
-
-    // Progress bar update interval
-    progressInterval.current = setInterval(() => {
-      if (!isPaused) {
-        currentStep++;
-      }
-    }, PROGRESS_UPDATE_MS);
 
     // Clean up intervals and event listeners on unmount
     return () => {
