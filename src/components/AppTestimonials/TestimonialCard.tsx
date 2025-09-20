@@ -23,7 +23,7 @@ export const TestimonialCard = ({
       <div className="flex flex-col gap-4 h-full">
         {testimonial.text ? (
           <p className="text-light-800 dark:text-dark-300 text-sm italic">
-            "{testimonial.text}"
+            {`"${testimonial.text}"`}
           </p>
         ) : testimonial.imageSrc ? (
           <div className="relative w-full h-40 rounded-md overflow-hidden">
