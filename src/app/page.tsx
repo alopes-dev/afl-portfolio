@@ -4,6 +4,7 @@ import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";
 import { AppExperienceTimeline } from "@/components/AppExperienceTimeline/AppExperienceTimeline";
 import { AppHero } from "@/components/AppHero/AppHero";
 import { AppProjectCarousel } from "@/components/AppProjectCarousel/AppProjectCarousel";
+import { AppTestimonials } from "@/components/AppTestimonials/AppTestimonials";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function HomePage() {
       <AppBrandsWorkedWithMe />
       <AppProjectCarousel />
       <AppExperienceTimeline />
+      <AppTestimonials />
       {/* </AppWarpper> */}
     </main>
   );

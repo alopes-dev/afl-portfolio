@@ -7,24 +7,19 @@ const mySkills = [
       "Experienced in building scalable web and mobile applications using React, Next.js, React Native, Flutter, and Node.js with a strong focus on clean architecture and performance.",
   },
   {
-    name: "DevOps & Infrastructure",
+    name: "Mobile Development",
     description:
-      "Proficient with Docker, Kubernetes, and CI/CD pipelines to automate deployment, improve scalability, and ensure high system reliability.",
+      "Skilled in developing cross-platform mobile applications with React Native (Expo) and Flutter, as well as native iOS apps using SwiftUI.",
+  },
+  {
+    name: "AI-Assisted Development",
+    description:
+      "Leverages tools like MCP (Model context protocols), GitHub Copilot, Cursor, and V0 to accelerate coding workflows, optimize integrations, and improve code quality.",
   },
   {
     name: "Domain-Driven Design (DDD)",
     description:
       "Applies domain-driven design principles along with SOLID, DRY, and KISS to create maintainable, modular, and well-structured software solutions.",
-  },
-  {
-    name: "AI-Assisted Development",
-    description:
-      "Leverages tools like GitHub Copilot, Cursor, and V0 to accelerate coding workflows, optimize integrations, and improve code quality.",
-  },
-  {
-    name: "Mobile Development",
-    description:
-      "Skilled in developing cross-platform mobile applications with React Native (Expo) and Flutter, as well as native iOS apps using SwiftUI.",
   },
   {
     name: "Clean Architecture & Best Practices",
@@ -34,10 +29,10 @@ const mySkills = [
 ];
 export const MySkills = () => {
   return (
-    <div className="flex flex-col items-start mt-6 gap-6">
+    <div className="flex flex-col items-start mt-6 gap-6 md:w-[50%]">
       {mySkills?.map((mySkill) => (
         <div
-          className="flex flex-col items-start gap-2 border-b border-solid border-light-400 dark:border-dark-700 pb-2"
+          className="flex flex-col items-start gap-2 border-b border-solid border-light-400 dark:border-dark-700 pb-2 "
           key={mySkill.name}
         >
           <div className="flex flex-row items-center justify-center gap-2 ">
