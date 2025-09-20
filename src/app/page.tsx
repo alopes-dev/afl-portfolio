@@ -1,6 +1,7 @@
 import { AppAbout } from "@/components/AppAbout/AppAbout";
 import { AppBrandsWorkedWithMe } from "@/components/AppBrandsWorkedWithMe/AppBrandsWorkedWithMe";
 import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";
+import { AppExperienceTimeline } from "@/components/AppExperienceTimeline/AppExperienceTimeline";
 import { AppHero } from "@/components/AppHero/AppHero";
 import { AppProjectCarousel } from "@/components/AppProjectCarousel/AppProjectCarousel";
 import type { Metadata } from "next";
@@ -47,6 +48,7 @@ export default function HomePage() {
       <AppCoreSkill />
       <AppBrandsWorkedWithMe />
       <AppProjectCarousel />
+      <AppExperienceTimeline />
       {/* </AppWarpper> */}
     </main>
   );
