@@ -18,9 +18,9 @@ interface ContentfulStore {
 
 // Create Contentful client
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID!,
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
   environment: "master",
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
 });
 
 export const useContentfulStore = create<ContentfulStore>((set, get) => ({
