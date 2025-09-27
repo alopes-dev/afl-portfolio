@@ -4,6 +4,8 @@ import { Roboto } from "next/font/google";
 import { ThemeProvider } from "@/components/providers";
 import { AppDrawer } from "@/components/_shared/AppDrawer/AppDrawer";
 import { AppMenu } from "@/components/_shared/AppMenu/AppMenu";
+import { AppContentfulProvider } from "@/context/contentful";
+import { AppGetInTouch } from "@/components/AppGetInTouch";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -73,9 +75,14 @@ export default function RootLayout({
         className={`h-full antialiased bg-light-background dark:bg-dark-background text-black dark:text-white text-foreground ${roboto.className}`}
       >
         <ThemeProvider>
-          <AppDrawer />
-          <AppMenu />
-          {children}
+          <AppContentfulProvider>
+            <AppDrawer />
+            <AppMenu />
+            <main className="flex h-full w-full flex-col items-center p-6 pt-36">
+              {children}
+              <AppGetInTouch />
+            </main>
+          </AppContentfulProvider>
         </ThemeProvider>
       </body>
     </html>

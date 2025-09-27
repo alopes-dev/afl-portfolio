@@ -29,9 +29,11 @@ export const AppProjectCarousel = () => {
     if (!api) return;
 
     // Set up event listener for slide changes
-    api.on("select", () => {
+
+    const handleSelect = () => {
       setCurrentIndex(api.selectedScrollSnap() + 1);
-    });
+    };
+    api.on("select", handleSelect);
 
     // Clear existing intervals when speed changes
     if (autoScrollInterval.current) clearInterval(autoScrollInterval.current);
@@ -50,11 +52,7 @@ export const AppProjectCarousel = () => {
     return () => {
       if (autoScrollInterval.current) clearInterval(autoScrollInterval.current);
       if (progressInterval.current) clearInterval(progressInterval.current);
-      if (api) {
-        api.off("select", () => {
-          setCurrentIndex(api.selectedScrollSnap() + 1);
-        });
-      }
+      api.off("select", handleSelect);
     };
   }, [api, isPaused]);
 
