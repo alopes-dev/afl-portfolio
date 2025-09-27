@@ -6,7 +6,7 @@ import { AppAnimation } from "../_shared/AppAnimation/AppAnimation";
 export const AppCoreSkill = () => {
   return (
     <AppAnimation id="skill" className="mb-16 container">
-      <div className="flex flex-col md:flex-row items-start md:items-center md:justify-center mt-16 gap-[96px] translate-y-4 transition-all duration-700">
+      <div className="flex flex-col md:flex-row items-start md:items-center md:justify-center mt-16 gap-5 md:gap-[96px] translate-y-4 transition-all duration-700">
         <div className="flex flex-col gap-4 items-start md:w-[30%]">
           <h4 className="text-[28px] font-bold text-light-950 dark:text-dark-100">
             Core Skills

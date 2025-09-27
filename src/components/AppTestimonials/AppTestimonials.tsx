@@ -128,7 +128,7 @@ export const AppTestimonials = () => {
 
   return (
     <AppAnimation id="testimonials" className="mb-16 container">
-      <div className="flex flex-col items-center mt-16 gap-4 translate-y-4 transition-all duration-700">
+      <div className="flex flex-col items-center mt-4 gap-4 translate-y-4 transition-all duration-700">
         <h4 className="text-[28px] font-bold text-light-950 dark:text-dark-100">
           Testimonials
         </h4>

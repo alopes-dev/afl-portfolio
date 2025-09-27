@@ -2,10 +2,12 @@ import { AppAbout } from "@/components/AppAbout/AppAbout";
 import { AppBrandsWorkedWithMe } from "@/components/AppBrandsWorkedWithMe/AppBrandsWorkedWithMe";
 import { AppCoreSkill } from "@/components/AppCoreSkill/AppCoreSkill";
 import { AppExperienceTimeline } from "@/components/AppExperienceTimeline/AppExperienceTimeline";
+import { AppGetInTouch } from "@/components/AppGetInTouch";
 import { AppHero } from "@/components/AppHero/AppHero";
 import { AppProjectCarousel } from "@/components/AppProjectCarousel/AppProjectCarousel";
 import { AppTestimonials } from "@/components/AppTestimonials/AppTestimonials";
 import type { Metadata } from "next";
+import { Fragment } from "react";
 
 export const metadata: Metadata = {
   title: "Home | Antonio Ferraz Lopes",
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="flex h-full w-full flex-col items-center p-6 pt-36">
+    <Fragment>
       {/* <AppWarpper> */}
       <div className="absolute top-[-166px] w-[354px] rounded-full h-[354px] md:hidden blur-3xl bg-purple-dark dark:opacity-40 opacity-30"></div>
       <AppHero />
@@ -51,7 +53,8 @@ export default function HomePage() {
       <AppProjectCarousel />
       <AppExperienceTimeline />
       <AppTestimonials />
+
       {/* </AppWarpper> */}
-    </main>
+    </Fragment>
   );
 }
