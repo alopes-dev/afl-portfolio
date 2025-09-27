@@ -1,5 +1,6 @@
 "use client";
 
+import { useAppContentful } from "@/context/contentful";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -30,6 +31,25 @@ type AppAvatarProps = {
 
 export const AppAvatar = ({ className, size = 64 }: AppAvatarProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { header } = useAppContentful();
+
+  const [autorAvatars, setAutorAvatars] =
+    useState<AvatarImage[]>(AVATAR_IMAGES);
+
+  useEffect(() => {
+    if (header?.photo?.fields?.file?.url) {
+      setAutorAvatars([
+        {
+          src: `https:${header?.photo?.fields?.file?.url}`,
+          alt: header?.photo?.fields?.description || "",
+        },
+        {
+          src: `https:${header?.avatar?.fields?.file?.url}`,
+          alt: header?.avatar?.fields?.description || "",
+        },
+      ]);
+    }
+  }, [header]);
 
   useEffect(() => {
     const flipTimer = setInterval(
@@ -50,7 +70,7 @@ export const AppAvatar = ({ className, size = 64 }: AppAvatarProps) => {
         }`}
         style={{ transformStyle: "preserve-3d" }}
       >
-        {AVATAR_IMAGES.map((image, index) => (
+        {autorAvatars.map((image, index) => (
           <Image
             key={image.src}
             src={image.src}

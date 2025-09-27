@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false, // Ensure strict TypeScript checking
   },
+  images: {
+    domains: ["images.ctfassets.net"], // Add Contentful's image domain
+  },
 };
 
 export default nextConfig;
