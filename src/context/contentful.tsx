@@ -61,7 +61,7 @@ export const AppContentfulProvider = (props: { children: ReactNode }) => {
       isLoading,
       error,
     }),
-    [isLoading, error, dataResponse]
+    [isLoading, error, aboutFields, headerFields]
   );
   return <AppContentfulContext.Provider value={memoizedValue} {...props} />;
 };

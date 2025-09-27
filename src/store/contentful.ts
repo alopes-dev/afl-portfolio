@@ -1,6 +1,10 @@
 import { create } from "zustand";
 import { createClient, Entry } from "contentful";
-import { ContentfulData } from "@/types/contentful";
+import {
+  ContentfulData,
+  HeaderFields,
+  ProjectFields,
+} from "@/types/contentful";
 
 interface ContentfulStore {
   data: ContentfulData | null;

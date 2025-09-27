@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { AppProjectCard } from "@/components/AppProjectCard/AppProjectCard";
-import { AppGetInTouch } from "@/components/AppGetInTouch";
 import { Fragment } from "react";
 import { ProjectGallery } from "@/components/AppProjectCard/_shared/ProjectGallery";
 

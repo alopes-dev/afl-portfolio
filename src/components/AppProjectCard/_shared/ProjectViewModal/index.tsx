@@ -1,15 +1,9 @@
 import {
-  AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui";
-import { Button } from "@/components/ui/button";
 import { AppProjectCard } from "../../AppProjectCard";
 import { XIcon } from "lucide-react";
 
